@@ -1,7 +1,7 @@
 {
   "name": "fork",
   "version": "0.0.1",
-  "description": "API Gateway e API Manager",
+  "description": "API Gateway",
   "private": true,
   "main": "index.js",
   "scripts": {
@@ -17,9 +17,7 @@
   },
   "keywords": [
     "API",
-    "Gateway",
-    "API",
-    "Manager"
+    "Gateway"
   ],
   "author": "Leonardo Lucas dos Santos",
   "license": "ISC",
