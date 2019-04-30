@@ -5,7 +5,7 @@ const server = express();
 
 const logger = function(req: Request, res: Response, next: Function) {
   const { method, url, body } = req;
-
+  res;
   console.log(method, url, body || "");
   next();
 };
