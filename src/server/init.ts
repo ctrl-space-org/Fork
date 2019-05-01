@@ -1,9 +1,6 @@
-//  "@types/readline-sync": "^1.4.3",
-// "dotenv": "^7.0.0",
-
 // https://www.npmjs.com/package/request-balancer
 // https://www.npmjs.com/package/smart-request-balancer
-import server from "./routes";
+import server from "./server";
 import dotenv from "dotenv";
 
 dotenv.config();
