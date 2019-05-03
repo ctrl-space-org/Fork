@@ -1,15 +1,18 @@
 // node-typescript/src/server.ts
-import express from "express";
-import morgan from "morgan";
+// import express from 'express'
+import restify from 'restify'
+
+// import morgan from "morgan";
 // import httpProxy from "express-http-proxy";
-import helmet from "helmet";
+// import helmet from "helmet";
 
-import routes from "../Core/routes";
-const server = express();
+import routes from '../Core/routes'
 
-server.use(morgan("dev"));
-server.use(helmet());
+// const server = express()
+const server = restify.createServer()
+// server.use(morgan("dev"));
+// server.use(helmet());
 
-routes(server._router);
+routes(server)
 
-export default server;
+export default server

@@ -1,8 +1,8 @@
-import { Router } from "express";
-
-export default function routes(server: Router): void {
-  console.log("teste");
-  server.get("/", (_, res) => {
-    res.send("First Test2");
-  });
+export default function routes (server: any): void {
+  console.log('teste')
+  server.get('/', (req: any, res: any, next: any) => {
+    req
+    next
+    res.send('First Test2')
+  })
 }
