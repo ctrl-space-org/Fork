@@ -1,7 +1,7 @@
 
-let TYPES = {
+let Types = {
   Server: Symbol('Server'),
   ServerRoutes: Symbol('ServerRoutes')
 }
 
-export default TYPES
+export default Types
