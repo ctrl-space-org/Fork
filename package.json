@@ -5,8 +5,8 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --watch \"src/server/\" --exec \"sucrase-node src/server/init.ts\" -e ts",
-    "devts": "nodemon --watch \"src/server/\" --exec \"ts-node src/server/init.ts\" -e ts",
+    "dev": "nodemon --watch \"src/\" --exec \"sucrase-node src/server/init.ts\" -e ts",
+    "devts": "nodemon --watch \"src/\" --exec \"ts-node src/server/init.ts\" -e ts",
     "test": "jest --no-cache",
     "build": "tsc",
     "prod": "npm run build && node dist/server/init.js"
@@ -26,7 +26,6 @@
   },
   "homepage": "https://github.com/sombratwo/Fork#readme",
   "dependencies": {
-    "@nestjs/common": "^6.1.1",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^4.16.1",
     "@types/express-http-proxy": "^1.5.3",
@@ -38,11 +37,11 @@
     "express": "^4.16.4",
     "express-http-proxy": "^1.5.1",
     "helmet": "^3.16.0",
+    "inversify": "^5.0.1",
     "mongoose": "^5.5.3",
     "morgan": "^1.9.1",
     "reflect-metadata": "^0.1.13",
-    "restify": "^8.3.1",
-    "rxjs": "^6.5.1"
+    "restify": "^8.3.1"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",
