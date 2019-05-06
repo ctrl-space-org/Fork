@@ -1,5 +1,5 @@
 import Server from './Server'
-export default interface ServerRoutes {
+export default interface Application {
     server: Server
     createRoutes():void
 };

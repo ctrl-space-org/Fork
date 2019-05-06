@@ -1,13 +1,13 @@
 import { Container } from 'inversify'
 import Server from '../Ports/Server'
-import TYPES from '../Types/Types'
 import { ExpressAdapter } from '../Adapters/ExpressAdapter'
 import Routes from '../Core/Routes'
-import ServerRoutes from '../Ports/ServerRoutes'
+import Application from '../Ports/Application'
 import 'reflect-metadata'
+import { ServerType, ApplicationType } from './types'
 
-var container = new Container()
-container.bind<Server>(TYPES.Server).to(ExpressAdapter)
-container.bind<ServerRoutes>(TYPES.ServerRoutes).to(Routes)
+let container = new Container()
+container.bind<Server>(ServerType).to(ExpressAdapter)
+container.bind<Application>(ApplicationType).to(Routes)
 
-export default container.get<ServerRoutes>(TYPES.ServerRoutes)
+export default container.get<Application>(ApplicationType)

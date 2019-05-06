@@ -1,9 +1,7 @@
 import { injectable } from 'inversify'
-import 'reflect-metadata'
 import express, { Express, RequestHandler } from 'express'
 import Server from '../Ports/Server'
-import morgan from 'morgan'
-import helmet from 'helmet'
+import 'reflect-metadata'
 
 @injectable()
 class ExpressAdapter implements Server {
@@ -11,8 +9,8 @@ class ExpressAdapter implements Server {
 
   public constructor () {
     this.server = express()
-    this.use(morgan('dev'))
-    this.use(helmet())
+    // this.use(morgan('dev'))
+    // this.use(helmet())
   }
 
   public post (path: string, handler: RequestHandler): void {
@@ -35,9 +33,8 @@ class ExpressAdapter implements Server {
     this.server.use(handler)
   }
 
-  public listen (port: string = '80', fun: Function):this {
+  public listen (port: string = '80', fun: Function):void {
     this.server.listen(port, fun)
-    return this
   }
 }
 

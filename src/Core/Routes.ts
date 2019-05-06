@@ -1,15 +1,15 @@
-import ServerRoutes from '../Ports/ServerRoutes'
+import Application from '../Ports/Application'
 import { injectable, inject } from 'inversify'
 import Server from '../Ports/Server'
-import Types from '../Types/Types'
 import { Request, Response } from '../Ports/http'
+import { ServerType } from '../server/types'
 
 @injectable()
-export default class Routes implements ServerRoutes {
+export default class Routes implements Application {
   public server: Server
 
   public constructor (
-    @inject(Types.Server) server: Server
+    @inject(ServerType) server: Server
   ) {
     this.server = server
   }
