@@ -3,5 +3,6 @@ export interface Request {
     query: any
 }
 export interface Response {
-    send: Function
+    send: Function,
+    json: Function
 }

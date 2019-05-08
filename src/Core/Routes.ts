@@ -5,6 +5,7 @@ import { Request, Response } from '../Ports/http'
 import { ServerType } from '../server/types'
 import morgan from 'morgan'
 import helmet from 'helmet'
+import 'reflect-metadata'
 
 @injectable()
 export default class Routes implements Application {
@@ -19,8 +20,9 @@ export default class Routes implements Application {
   public createRoutes (): void {
     this.server.use(morgan('dev'))
     this.server.use(helmet())
+
     this.server.get('/', (req: Request, res: Response):void => {
-      res.send('asaaa')
+      res.send(ServerType.toString())
     })
   }
 }

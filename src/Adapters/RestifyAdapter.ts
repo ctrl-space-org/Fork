@@ -1,14 +1,16 @@
 import { injectable } from 'inversify'
-import express, { Express, RequestHandler } from 'express'
+import restify, { Server as Restify, RequestHandler } from 'restify'
 import Server from '../Ports/Server'
 import 'reflect-metadata'
 
 @injectable()
-class ExpressAdapter implements Server {
-  private server: Express ;
+class RestifyAdapter implements Server {
+  private server: Restify ;
 
   public constructor () {
-    this.server = express()
+    console.log('express')
+
+    this.server = restify.createServer()
   }
 
   public post (path: string, handler: RequestHandler): void {
@@ -36,4 +38,4 @@ class ExpressAdapter implements Server {
   }
 }
 
-export { ExpressAdapter }
+export { RestifyAdapter }
