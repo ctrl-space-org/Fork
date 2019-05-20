@@ -1,14 +1,19 @@
-import { injectable } from 'inversify'
+import { injectable, inject } from 'inversify'
 import express, { Express, RequestHandler } from 'express'
-import Server from '../Ports/Server'
 import 'reflect-metadata'
+import { Server, Router, Plugins } from 'server-port'
+import { PluginsType } from '../Types'
 
 @injectable()
-class ExpressAdapter implements Server {
+class ExpressAdapter implements Server, Router {
+  public plugins: Plugins;
   private server: Express ;
 
-  public constructor () {
+  public constructor (@inject(PluginsType) plugins:Plugins) {
     this.server = express()
+    this.plugins = plugins
+    // this.server.use(express.json())
+    // this.server.use(express.urlencoded({ extended: true }))
   }
 
   public post (path: string, handler: RequestHandler): void {
@@ -35,5 +40,4 @@ class ExpressAdapter implements Server {
     this.server.listen(port, fun)
   }
 }
-
 export { ExpressAdapter }

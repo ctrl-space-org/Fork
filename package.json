@@ -41,7 +41,8 @@
     "mongoose": "^5.5.3",
     "morgan": "^1.9.1",
     "reflect-metadata": "^0.1.13",
-    "restify": "^8.3.1"
+    "restify": "^8.3.1",
+    "server-port": "^0.0.12"
   },
   "devDependencies": {
     "@types/jest": "^24.0.11",

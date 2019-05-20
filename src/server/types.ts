@@ -13,6 +13,7 @@ function loadEnvRoute (): symbol {
       return ServerTypes.express
   }
 }
+
 const [ServerType, ApplicationType] = [loadEnvRoute(), Symbol('Application')]
 
 export { ServerType, ApplicationType, ServerTypes }

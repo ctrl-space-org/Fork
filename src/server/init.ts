@@ -8,6 +8,6 @@ dotenv.config()
 
 const { SERVER_PORT } = process.env
 
-application.createRoutes()
+application.init()
 
 application.server.listen(SERVER_PORT, (): void => serverStart(SERVER_PORT))

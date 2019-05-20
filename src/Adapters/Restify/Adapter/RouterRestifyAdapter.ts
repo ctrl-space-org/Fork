@@ -1,16 +1,14 @@
 import { injectable } from 'inversify'
-import restify, { Server as Restify, RequestHandler } from 'restify'
-import Server from '../Ports/Server'
+import { Server as Restify, RequestHandler } from 'restify'
 import 'reflect-metadata'
+import { Router } from 'server-port'
 
 @injectable()
-class RestifyAdapter implements Server {
+class RouterRestifyAdapter implements Router {
   private server: Restify ;
 
-  public constructor () {
-    console.log('express')
-
-    this.server = restify.createServer()
+  public constructor (router: Restify) {
+    this.server = router
   }
 
   public post (path: string, handler: RequestHandler): void {
@@ -32,10 +30,6 @@ class RestifyAdapter implements Server {
   public use (handler: RequestHandler): void {
     this.server.use(handler)
   }
-
-  public listen (port: string = '80', fun: Function):void {
-    this.server.listen(port, fun)
-  }
 }
 
-export { RestifyAdapter }
+export { RouterRestifyAdapter }
